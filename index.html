@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div id="rgb-input-container">
+        <div class="rgb-input" id="red-input-container">
+          <p>Red</p>
+          <p id="red-value">0</p>
+          <input
+            type="range"
+            min="0"
+            max="255"
+            id="red-slider"
+            onchange="setBackgroundColor(null, false)"
+          />
+          <!--There will be an onchange function-->
+        </div>
+        <div class="rgb-input" id="green-input-container">
+          <p>Green</p>
+          <p id="green-value">0</p>
+          <input
+            type="range"
+            min="0"
+            max="255"
+            id="green-slider"
+            onchange="setBackgroundColor(null, false)"
+          />
+        </div>
+        <div class="rgb-input" id="blue-input-container">
+          <p>Blue</p>
+          <p id="blue-value">0</p>
+          <input
+            type="range"
+            min="0"
+            max="255"
+            id="blue-slider"
+            onchange="setBackgroundColor(null, false)"
+          />
+        </div>
+      </div>
+      <button id="random-color-btn">Random Color</button>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>

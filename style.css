@@ -1,0 +1,68 @@
+* {
+  margin: 5px;
+}
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(216, 216, 216);
+  border-radius: 15px;
+  padding: 0 15px 15px 15px;
+  height: 10rem;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, rgb(255, 150, 150), rgb(255, 206, 115), rgb(255, 255, 129), rgb(149, 255, 149), rgb(160, 160, 255), rgb(255, 159, 255));
+}
+#rgb-input-container {
+  display: flex;
+}
+.rgb-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    width: 10rem;
+}
+#red-input-container {
+    background: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 110, 110))
+}
+#green-input-container {
+    background: linear-gradient(to right, rgb(0, 185, 0), rgb(128, 244, 99))
+}
+#blue-input-container {
+    background: linear-gradient(to right, rgb(75, 75, 255), rgb(85, 235, 255))
+}
+p {
+    font-size: large;
+    font-family: cursive;
+}
+input {
+    box-shadow: 4px 4px 3px black;
+    border: 3px solid black;
+}
+#random-color-btn {
+    font-size: x-large;
+    border-radius: 4px;
+    color: black;
+    background: linear-gradient(to bottom right, orangered, orange, greenyellow, limegreen, cornflowerblue, purple);
+    transition-duration: 0.5s;
+    font-family: 'Verdana';
+    border: 3px solid black;
+}
+#random-color-btn:hover {
+    font-size: xx-large;
+}
+#random-color-btn:active {
+    opacity: 0.6;
+    transition-duration: 0.2s;
+}
