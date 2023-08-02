@@ -7,9 +7,6 @@ const redValue = document.getElementById("red-value");
 const greenValue = document.getElementById("green-value");
 const blueValue = document.getElementById("blue-value");
 
-function changeColor(r, g, b) {
-  bodyEl.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-}
 function randomColor() {
   let r = Math.trunc(Math.random() * 255) + 1;
   let g = Math.trunc(Math.random() * 255) + 1;
