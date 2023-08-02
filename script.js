@@ -29,11 +29,11 @@ function setSliderValues(r, g, b) {
 }
 function setBackgroundColor(color, isPleasantColor) {
   if (isPleasantColor) {
-    bodyEl.style.backgroundColor = `rgb(${pleasantColorRGBValues[color]})`;
+    bodyEl.style.backgroundColor = `rgb(${defaultColors[color]})`;
     setSliderValues(
-      pleasantColorRGBValues[color][0],
-      pleasantColorRGBValues[color][1],
-      pleasantColorRGBValues[color][2]
+      defaultColors[color][0],
+      defaultColors[color][1],
+      defaultColors[color][2]
     );
   }
   redValue.textContent = redSlider.value;
@@ -43,7 +43,7 @@ function setBackgroundColor(color, isPleasantColor) {
 }
 randomColorBtn.addEventListener("click", randomColor);
 
-const pleasantColorRGBValues = [
+const defaultColors = [
   [255, 206, 11],
   [232, 63, 104],
   [171, 62, 143],
@@ -85,6 +85,5 @@ switch (pleasantColorIndex) {
     setBackgroundColor(8, true);
     break;
   case 10:
-    setBackgroundColor(9, true);
-    break;
+    setBackgroundCodefaultColors
 }
