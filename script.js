@@ -24,8 +24,8 @@ function setSliderValues(r, g, b) {
   greenSlider.value = g;
   blueSlider.value = b;
 }
-function setBackgroundColor(color, isPleasantColor) {
-  if (isPleasantColor) {
+function setBackgroundColor(color, isDefaultColor) {
+  if (isDefaultColor) {
     bodyEl.style.backgroundColor = `rgb(${defaultColors[color]})`;
     setSliderValues(
       defaultColors[color][0],
@@ -52,7 +52,7 @@ const defaultColors = [
   [180, 238, 180],
   [42, 202, 234],
 ];
-const pleasantColorIndex = Math.trunc(Math.random() * 10) + 1;
+const pleasantColorIndex = Math.trunc(Math.random() * defaultColors.length) + 1;
 switch (pleasantColorIndex) {
   case 1:
     setBackgroundColor(0, true);
@@ -82,5 +82,5 @@ switch (pleasantColorIndex) {
     setBackgroundColor(8, true);
     break;
   case 10:
-    setBackgroundCodefaultColors
+    setBackgroundColor(9, true)
 }
