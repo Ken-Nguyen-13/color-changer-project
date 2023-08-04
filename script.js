@@ -1,3 +1,5 @@
+///////////////////////////// DOM Element Variables //////////////////////////////////
+
 const bodyEl = document.body;
 const randomColorBtn = document.getElementById("random-color-btn");
 const redSlider = document.getElementById("red-slider");
@@ -7,39 +9,30 @@ const redValue = document.getElementById("red-value");
 const greenValue = document.getElementById("green-value");
 const blueValue = document.getElementById("blue-value");
 
+// Sets the HTML slider & rgb values according to rgb parameters
+function setColorValues(r, g, b) {
+  redSlider.value = r;
+  greenSlider.value = g;
+  blueSlider.value = b;
+  redValue.textContent = r;
+  greenValue.textContent = g;
+  blueValue.textContent = b;
+}
+
+/////////////////////////// Random Color Btn Code ////////////////////////////////////
+
 function randomColor() {
   let r = Math.trunc(Math.random() * 255) + 1;
   let g = Math.trunc(Math.random() * 255) + 1;
   let b = Math.trunc(Math.random() * 255) + 1;
-  redValue.textContent = r;
-  greenValue.textContent = g;
-  blueValue.textContent = b;
-  redSlider.value = r;
-  greenSlider.value = g;
-  blueSlider.value = b;
+  setColorValues(r, g, b);
   bodyEl.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-}
-function setSliderValues(r, g, b) {
-  redSlider.value = r;
-  greenSlider.value = g;
-  blueSlider.value = b;
-}
-function setBackgroundColor(color, isDefaultColor) {
-  if (isDefaultColor) {
-    bodyEl.style.backgroundColor = `rgb(${defaultColors[color]})`;
-    setSliderValues(
-      defaultColors[color][0],
-      defaultColors[color][1],
-      defaultColors[color][2]
-    );
-  }
-  redValue.textContent = redSlider.value;
-  greenValue.textContent = greenSlider.value;
-  blueValue.textContent = blueSlider.value;
-  bodyEl.style.backgroundColor = `rgb(${redSlider.value}, ${greenSlider.value}, ${blueSlider.value})`;
 }
 randomColorBtn.addEventListener("click", randomColor);
 
+//////////////////////////// Setting The Background Color //////////////////////////////////
+
+// Default Color RGB Value's
 const defaultColors = [
   [255, 206, 11],
   [232, 63, 104],
@@ -52,8 +45,26 @@ const defaultColors = [
   [180, 238, 180],
   [42, 202, 234],
 ];
-const pleasantColorIndex = Math.trunc(Math.random() * defaultColors.length) + 1;
-switch (pleasantColorIndex) {
+
+// Function To Set Background Color upon parameters
+function setBackgroundColor(color, isDefaultColor) {
+  if (isDefaultColor) {
+    bodyEl.style.backgroundColor = `rgb(${defaultColors[color]})`;
+    setColorValues(
+      defaultColors[color][0],
+      defaultColors[color][1],
+      defaultColors[color][2]
+    );
+  }
+  setColorValues(redSlider.value, greenSlider.value, blueSlider.value);
+  bodyEl.style.backgroundColor = `rgb(${redSlider.value}, ${greenSlider.value}, ${blueSlider.value})`;
+}
+
+// Specifies Which RGB Value Will Become The Default By Rand Generating An Index At defaultColors
+const defaultColorIndex = Math.trunc(Math.random() * defaultColors.length) + 1;
+
+// Sets The Default Color of The Page Upon Opening Based Upon The defaultColorIndex Of defaultColor
+switch (defaultColorIndex) {
   case 1:
     setBackgroundColor(0, true);
     break;
@@ -82,5 +93,5 @@ switch (pleasantColorIndex) {
     setBackgroundColor(8, true);
     break;
   case 10:
-    setBackgroundColor(9, true)
+    setBackgroundColor(9, true);
 }
