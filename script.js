@@ -60,38 +60,6 @@ function setBackgroundColor(color, isDefaultColor) {
   bodyEl.style.backgroundColor = `rgb(${redSlider.value}, ${greenSlider.value}, ${blueSlider.value})`;
 }
 
-// Specifies Which RGB Value Will Become The Default By Rand Generating An Index At defaultColors
-const defaultColorIndex = Math.trunc(Math.random() * defaultColors.length) + 1;
-
-// Sets The Default Color of The Page Upon Opening Based Upon The defaultColorIndex Of defaultColor
-switch (defaultColorIndex) {
-  case 1:
-    setBackgroundColor(0, true);
-    break;
-  case 2:
-    setBackgroundColor(1, true);
-    break;
-  case 3:
-    setBackgroundColor(2, true);
-    break;
-  case 4:
-    setBackgroundColor(3, true);
-    break;
-  case 5:
-    setBackgroundColor(4, true);
-    break;
-  case 6:
-    setBackgroundColor(5, true);
-    break;
-  case 7:
-    setBackgroundColor(6, true);
-    break;
-  case 8:
-    setBackgroundColor(7, true);
-    break;
-  case 9:
-    setBackgroundColor(8, true);
-    break;
-  case 10:
-    setBackgroundColor(9, true);
-}
+// Changes the background color according to the rgb value stored at index defaultColorIndex of defaultColors
+const defaultColorIndex = Math.trunc(Math.random() * defaultColors.length);
+setBackgroundColor(defaultColorIndex, true);
